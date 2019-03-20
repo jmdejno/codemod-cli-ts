@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import yargs from "yargs";
-import chalk from "chalk";
+import importLocal from "import-local";
 
 function insideProject() {
-  let nearestPackagePath = require("pkg-up").sync();
+  const nearestPackagePath = require("pkg-up").sync();
   if (nearestPackagePath === null) {
     return false;
   }
@@ -12,10 +12,21 @@ function insideProject() {
   return pkg.keywords && pkg.keywords.includes("codemod-cli-ts");
 }
 
-// if(insideProject()) {
 yargs
-  .locale("en")
-  .commandDir(`../commands`)
-  .demandCommand()
-  .help()
-  .parse();
+    .locale("en")
+    .commandDir("../commands")
+
+// if (importLocal(__filename)) {
+  yargs
+    .commandDir(`../commands/local`, { exclude: /(link\.js)/ })
+    .demandCommand()
+    .help()
+    .parse();
+// } else {
+//   yargs
+
+//     // .commandDir(`../commands/global`, { exclude: /(link\.js)/ })
+//     .demandCommand()
+//     .help()
+//     .parse();
+// }

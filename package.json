@@ -7,9 +7,9 @@
     "src"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist && tsc && chmod -R 775 dist",
     "watch": "tsc -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -36,19 +36,27 @@
     "import-cwd": "^2.1.0",
     "import-local": "^2.0.0",
     "inquirer": "^6.2.2",
+    "inquirer-path": "^1.0.0-beta5",
     "jscodeshift": "^0.6.3",
     "pkg-up": "^2.0.0",
     "ts-node": "^8.0.3",
     "yargs": "^13.2.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-typescript": "^7.3.3",
     "@types/chalk": "^2.2.0",
     "@types/execa": "^0.9.0",
     "@types/fs-extra": "^5.0.5",
     "@types/globby": "^9.1.0",
     "@types/inquirer": "^0.0.44",
+    "@types/jest": "^24.0.11",
     "@types/jscodeshift": "^0.6.0",
     "@types/node": "^11.11.3",
-    "@types/yargs": "^12.0.10"
+    "@types/yargs": "^12.0.10",
+    "babel-jest": "^24.5.0",
+    "broccoli-test-helper": "^2.0.0",
+    "jest": "^24.5.0"
   }
 }
