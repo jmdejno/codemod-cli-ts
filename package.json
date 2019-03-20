@@ -1,0 +1,54 @@
+{
+  "name": "codemod-cli-ts",
+  "version": "1.0.0",
+  "description": "Cli for generating codemods written in Typescript.",
+  "main": "index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmdejno/codemod-cli-ts.git"
+  },
+  "keywords": [
+    "codemod"
+  ],
+  "bin": {
+    "codemod-cli-ts": "./dist/bin/cli.js"
+  },
+  "author": "Jeremy Dejno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmdejno/codemod-cli-ts/issues"
+  },
+  "homepage": "https://github.com/jmdejno/codemod-cli-ts#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "common-tags": "^1.8.0",
+    "execa": "^1.0.0",
+    "fs-extra": "^7.0.1",
+    "globby": "^9.1.0",
+    "import-cwd": "^2.1.0",
+    "import-local": "^2.0.0",
+    "inquirer": "^6.2.2",
+    "jscodeshift": "^0.6.3",
+    "pkg-up": "^2.0.0",
+    "ts-node": "^8.0.3",
+    "yargs": "^13.2.2"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/execa": "^0.9.0",
+    "@types/fs-extra": "^5.0.5",
+    "@types/globby": "^9.1.0",
+    "@types/inquirer": "^0.0.44",
+    "@types/jscodeshift": "^0.6.0",
+    "@types/node": "^11.11.3",
+    "@types/yargs": "^12.0.10"
+  }
+}
